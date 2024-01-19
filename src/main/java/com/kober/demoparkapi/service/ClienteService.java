@@ -1,10 +1,10 @@
 package com.kober.demoparkapi.service;
 
+import com.kober.demoparkapi.exception.CpfUniqueViolationException;
 import com.kober.demoparkapi.exception.EntityNotFoundException;
 import com.kober.demoparkapi.repository.ClienteRepository;
 import com.kober.demoparkapi.repository.projection.ClienteProjection;
 import com.kober.demoparkapi.entity.Cliente;
-import com.kober.demoparkapi.exception.CpfUniqueViolationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
