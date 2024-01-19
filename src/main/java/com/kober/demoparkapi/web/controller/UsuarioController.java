@@ -1,12 +1,12 @@
 package com.kober.demoparkapi.web.controller;
 
-import com.kober.demoparkapi.web.dto.UsuarioSenhaDto;
+import com.kober.demoparkapi.web.dto.mapper.UsuarioMapper;
+import com.kober.demoparkapi.web.exception.ErrorMessage;
 import com.kober.demoparkapi.entity.Usuario;
 import com.kober.demoparkapi.service.UsuarioService;
 import com.kober.demoparkapi.web.dto.UsuarioCreateDto;
 import com.kober.demoparkapi.web.dto.UsuarioResponseDto;
-import com.kober.demoparkapi.web.dto.mapper.UsuarioMapper;
-import com.kober.demoparkapi.web.exception.ErrorMessage;
+import com.kober.demoparkapi.web.dto.UsuarioSenhaDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -64,6 +64,8 @@ public class UsuarioController {
                     @ApiResponse(responseCode = "400", description = "Senha não confere",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
                     @ApiResponse(responseCode = "404", description = "Recurso não encontrado",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "422", description = "Campos invalidos ou mal formatados",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
             })
     @PatchMapping("/{id}")
@@ -71,7 +73,6 @@ public class UsuarioController {
         Usuario user = usuarioService.editarSenha(id, dto.getSenhaAtual(), dto.getNovaSenha(), dto.getConfirmaSenha());
         return ResponseEntity.noContent().build();
     }
-
 
     @Operation(summary = "Listar todos os usuários", description = "Listar todos os usuários cadastrados",
             responses = {
