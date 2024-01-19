@@ -19,3 +19,4 @@ Este repositório contém o código-fonte da API de estacionamento desenvolvida 
 
 Após execução, com o Swagger poderá acessar a documentação pela rede local
 - [Documentação da API](#) (http://localhost:8080/swagger-ui/index.html#/Clientes/create_1).
+- [Demandas e requisitos](#) (https://drive.google.com/file/d/1IfcU5DSjv3WCUwJh8QrWEsRyJo4QvnrH/view?usp=drive_link).
