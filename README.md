@@ -1,4 +1,4 @@
-# Spring-Parking: API de Estacionamento com Spring Boot
+# Spring-Parking: API para gerenciamento de Estacionamento com Spring Boot
 
 Este repositório contém o código-fonte da API de estacionamento desenvolvida como parte do estágio na Compass Uol, utilizando Spring Boot. O projeto abrange os seguintes tópicos:
 
