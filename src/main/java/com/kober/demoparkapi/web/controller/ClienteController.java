@@ -1,16 +1,16 @@
 package com.kober.demoparkapi.web.controller;
 
-import com.kober.demoparkapi.repository.projection.ClienteProjection;
-import com.kober.demoparkapi.web.dto.mapper.ClienteMapper;
-import com.kober.demoparkapi.web.dto.mapper.PageableMapper;
-import com.kober.demoparkapi.web.exception.ErrorMessage;
 import com.kober.demoparkapi.entity.Cliente;
-import com.kober.demoparkapi.jwt.JwtUserDetails;
+import com.kober.demoparkapi.repository.projection.ClienteProjection;
 import com.kober.demoparkapi.service.ClienteService;
 import com.kober.demoparkapi.service.UsuarioService;
+import com.kober.demoparkapi.jwt.JwtUserDetails;
 import com.kober.demoparkapi.web.dto.ClienteCreateDto;
 import com.kober.demoparkapi.web.dto.ClienteResponseDto;
 import com.kober.demoparkapi.web.dto.PageableDto;
+import com.kober.demoparkapi.web.dto.mapper.ClienteMapper;
+import com.kober.demoparkapi.web.dto.mapper.PageableMapper;
+import com.kober.demoparkapi.web.exception.ErrorMessage;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -101,7 +101,7 @@ public class ClienteController {
             responses = {
                     @ApiResponse(responseCode = "200", description = "Recurso recuperado com sucesso",
                             content = @Content(mediaType = " application/json;charset=UTF-8",
-                                    schema = @Schema(implementation = ClienteResponseDto.class))
+                                    schema = @Schema(implementation = PageableDto.class))
                     ),
                     @ApiResponse(responseCode = "403", description = "Recurso não permito ao perfil de CLIENTE",
                             content = @Content(mediaType = " application/json;charset=UTF-8",
